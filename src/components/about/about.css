@@ -1,0 +1,134 @@
+.about__container{
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+}
+
+.about__me{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    /* effet pour tourner l'image*/
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--color-primary),
+        transparent
+    );
+    display: grid; /*On veut afficher l'élément dans une grille*/
+    place-items: center;  /* On veut que les éléments soit centrer dans la grille*/
+}
+
+.about__ma-photo{
+    border-radius: 2rem ;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transition); /* Transition afin de rendre la rotation*/
+}
+
+.about__ma-photo:hover{
+ transform: rotate(0);
+}
+
+.about__ma-photo img{
+    width: 350px;
+}
+
+.about__cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.5rem;
+}
+
+.about__card{
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about__card:hover{
+    background: transparent;
+    border-color: #333;
+    cursor:default;
+}
+
+.about__icon{
+    color:var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.about__card h5{
+    font-size: 0.95rem;
+    color:var(--color-white);
+}
+
+.about__card:hover h5{
+    font-size: 0.95rem;
+    color:var(--color-bg-variant);
+}
+
+
+.about__card:hover svg{
+    color:var(--color-bg-variant);
+}
+
+.about__card:hover small{
+    color:var(--color-bg-variant);
+}
+
+
+
+.about__card small{
+    font-size: 0.7rem;
+    color:var(--color-light);
+}
+
+.about__content p{
+    margin: 2rem 0 2.6rem;
+    color:#333;
+    text-align: justify;
+}
+
+/* Media queries (ecran à taille moyenne(tablette)) */
+@media screen and (max-width: 1024px) {
+    .about__container{
+        grid-template-columns: 1fr;
+        gap:0;
+    }
+
+    .about__me{
+        width: 40%;
+        margin:8rem auto 15rem;
+    }
+
+    .about__content p {
+        margin:1rem 0 1.5rem;
+    }
+ }
+ 
+ /* Media queries (ecran de petite taille(smartphone)) */
+ 
+ @media screen and (max-width: 600px) {
+    .about__me{
+        width: 65%;
+        margin:0 auto 3rem;
+    }
+
+    .about_cards{
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+    }
+
+    .about__content{
+        text-align: center;
+    }
+
+    .about__content p {
+        margin: 1.5rem 0;
+    }
+
+ }
+ 

@@ -1,0 +1,106 @@
+header{
+    height: 120vh;
+    padding-top: 7rem;
+    overflow: hidden; /* Tous contenu qui sort de l'élément devra être cacher*/
+}
+
+.header__container{
+    text-align:center;
+    height: 100%;
+    position: relative; /*L'élément est positionné dans le flux normal du document puis décalé, par rapport à lui-même, selon les valeurs fournies par top, right, bottom et left.*/
+
+}
+
+/* CTA */
+.cta{
+   margin-top: 2.5rem; /* Pour descendre un peu l'élément*/
+   display: flex;
+   gap:1.2rem;
+   justify-content: center;  /* Manière dont l'élément va être afficher ici il sera centrer*/
+}
+
+/* Header social*/
+ 
+.header__socials{
+    display:flex; /*Propriété raccourcie qui définit la capacité d'un élément flexible à modifier ses dimensions afin de remplir l'espace disponible de son conteneur.*/
+    flex-direction: column;
+    align-items: center; /* Les éléments à l'intérieur de ce bloc devront centrer par rapport à celui-ci*/
+    gap: 0.8rem;
+    position: absolute;
+    left:0;
+    bottom: 3rem;
+}
+
+/* Le petit traits après les réseaux sociaux */
+
+.header__socials::after{
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+
+.header__socials a{
+    color: var(--color-bg-variant);
+}
+
+ a.svg:hover{
+    color: var(--color-white);
+}
+
+.header__socials:hover a{
+    color: var(--color-white);
+}
+
+.header__container h5{
+    color: var(--color-bg-variant);
+} 
+
+
+/* Ma photo */
+.moi{
+    background: linear-gradient(var(--color-primary),transparent);
+    width:30rem;
+    height: 50rem;
+    position: absolute;
+    left: calc(50% - 15rem); /* On fait un calcul afin de placer l'image à 50% de sa largeur - 11 pixel rem ce qui va la centrer*/
+    margin-top: 2rem;
+    border-radius: 15rem 15rem 10 10;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* le scroll down */
+.scroll__down{
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 200;
+    font-size: 0.9rem;
+    color:var(--color-primary);
+}
+
+.scroll__down:hover {
+    color:var(--color-white);
+}
+
+/* Media queries (ecran à taille moyenne(tablette)) */
+@media screen and (max-width: 1024px) {
+   header{
+       height: 68vh;
+   }
+}
+
+/* Media queries (ecran de petite taille(smartphone)) */
+
+@media screen and (max-width: 600px) {
+    header{
+        height: 100vh;
+    }
+
+    .header__socials,
+    .scroll__down{
+        display: none;
+    }
+}
+
